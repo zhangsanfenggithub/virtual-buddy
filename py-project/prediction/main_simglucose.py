@@ -20,8 +20,8 @@ env = T1DSimEnv(patient, sensor, pump, scenario)
 obs, _, done, info = env.reset()
 
 records = []
-MAX_STEPS = 480   # 最多480步 = 24小时
-LOG_EVERY  = 5    # 每5步打印一次（15分钟）
+MAX_STEPS = 480   # Maximum 480 steps = 24 hours
+LOG_EVERY  = 5    # Print every 5 steps (15 minutes)
 step = 0
 
 while not done and step < MAX_STEPS:
@@ -40,11 +40,11 @@ while not done and step < MAX_STEPS:
     records.append({'time': t, 'CGM': cgm, 'insulin': insulin})
 
     if step % LOG_EVERY == 0:
-        status = "🔴 低血糖" if cgm < 70 else ("🟡 高血糖" if cgm > 180 else "🟢 正常")
+        status = "🔴 Hypoglycemia" if cgm < 70 else ("🟡 Hyperglycemia" if cgm > 180 else "🟢 Normal")
         print(f"{t.strftime('%H:%M')} | CGM: {cgm:.1f} mg/dL | {status}")
 
     step += 1
 
 df = pd.DataFrame(records)
 df.to_csv('simglucose_result.csv', index=False)
-print(f"\n✅ 共 {len(df)} 条记录，已保存到 simglucose_result.csv")
+print(f"\n✅ Total {len(df)} records, saved to simglucose_result.csv")

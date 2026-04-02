@@ -78,7 +78,7 @@ model.fit(df[train_cols], estimator=MaximumLikelihoodEstimator)
 
 infer = VariableElimination(model)
 
-print("down ")
+print("done")
 print("\n── CPD: meal_happened ──")
 print(model.get_cpds('meal_happened'))
 print("\n── CPD: carb_level ──")
@@ -102,12 +102,12 @@ def predict_meal(hour, glucose, heart_rate, since_meal_steps, is_weekend=0):
     return meal_prob, predicted_carb
 
 test_cases = [
-    (7,  80,  65, 30, 0, 'breakfast low glucose after prolonged fasting'),
-    (12, 160, 90, 36, 0, 'lunch high glucuse and elevated heart rate'),
-    (15, 120, 70, 6,  0, 'afternoon just after eating'),
-    (18, 90,  72, 36, 0, 'dinner normal glocuse'),
-    (2,  70,  55, 10, 0, 'midnight low glocuse'),
-    (12, 160, 90, 36, 1, 'lunch weekend'),
+    (7,  80,  65, 30, 0, 'Breakfast low glucose after prolonged fasting'),
+    (12, 160, 90, 36, 0, 'Lunch high glucose and elevated heart rate'),
+    (15, 120, 70, 6,  0, 'Afternoon just after eating'),
+    (18, 90,  72, 36, 0, 'Dinner normal glucose'),
+    (2,  70,  55, 10, 0, 'Midnight low glucose'),
+    (12, 160, 90, 36, 1, 'Lunch weekend'),
 ]
 
 print("── Prediction ──")
