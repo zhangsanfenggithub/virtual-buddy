@@ -36,7 +36,7 @@ if uploaded:
     ax1.axhline(70,  color='orange', linestyle='--', linewidth=0.8)
     ax1.axhline(180, color='purple', linestyle='--', linewidth=0.8)
     ax1.fill_between(df['time'], 70, 180, alpha=0.05, color='green')
-    ax1.scatter(meals['time'], meals['glucose'], color='#  ', s=30, zorder=5, label='Meal(进食)')
+    ax1.scatter(meals['time'], meals['glucose'], color='#3498db', s=30, zorder=5, label='Meal(进食)')
     ax1.legend(); ax1.set_ylabel('mg/dL')
     st.pyplot(fig1)
 
