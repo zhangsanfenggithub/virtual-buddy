@@ -31,42 +31,42 @@ Simulate blood glucose changes and build control, to test if our meal prediction
 ### Front-end and Back-end Communation
 
 
-- Use WebSocket(or UDP port?) to connect the Unity avatar, front-end interface, and back-end prediction tools. 
-- Build a front-end interface to show key data such as blood glucose levels and meal predictions. And  sync the avatar’s state with back-end data.
+- Use WebSocket to connect the Unity, front-end interface, and back-end prediction tools. 
+- Build a front-end interface to show key data such as blood glucose levels and meal size predictions. And  sync the avatar’s state with back-end data.
 
 ---
 ## Progress
 
-### (1) Completed Work
+### (1) Work Plan
 
--  Created or imported the virtual avatar, rigged it, and added basic logic to control its actions.
+-  For Front-end 
+    - ~~Created or imported the virtual avatar, rigged it, and added basic logic to control its actions.~~
+    - ~~Integrate AIChat system~~ into avatar
+    - Add more actions for avatar
+    - Debug Panel
+    - Build real-time data display figure.
+
+-  For Back-end
+    - ~~Do prediction for real data~~
+    - ~~Building relevence Graph~~
+    - ~~Dynamic prediction~~
+    - Cross Validation
+    - Connect the Unity avatar to the back-end.
+    - Build the blood glucose simulation module.
+
     
--  Do prediction for two scenarios: Mock data and real data
 
 ### (2) Current Issues
 
-- I found bugs in the Bayesian network prediction module. The real data scenario has error and unresonable prediction.
+- ~~I found bugs in the Bayesian network prediction module. The real data scenario has error and unresonable prediction.~~
     
-- The Unity avatar's Animation encountered intermittent problem. And I'm looking into it.
-    
+- ~~The Unity avatar's Animation encountered intermittent problem. And I'm looking into it.~~
 
-### (3) Next Steps
+- Mainly focus on front-end and communication strategy. 
 
-- Fix bugs in the Bayesian network module, improve accuracy, and make sure reasonable results;
-    
-- Connect the Unity avatar to the back-end.
-    
--  Build the blood glucose simulation module, From now on, just Try the default config and scenario of  simglucose
-    
-- Custom more of the controller of simglucose 
-    
-- Build real-time data display figure,.
     
 
 ---
 
 ## Questions
 
-
-
-I found that activity, calorie_level and  heart rate are seems linearly related on figure, so I kept only one of (hr_level) them to improve performance. I’m not quite sure whether this might introduce too much bias. Do I need to further validate the relationship between them, or should I just include all of them in the prediction and then compare the bias?
