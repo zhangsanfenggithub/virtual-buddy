@@ -1,0 +1,9 @@
+simglucose
+pgmpy
+fastapi
+uvicorn[standard]
+pandas
+numpy
+websockets
+pydantic
+scikit-learn
