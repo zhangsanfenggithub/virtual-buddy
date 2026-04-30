@@ -2,7 +2,7 @@ from typing import Optional
 
 from simulation.state import SimState
 
-
+#if extreme glucouse level last a period of time 
 class AlertEngine:
     LOW_THRESHOLD: float = 70
     HIGH_THRESHOLD: float = 180

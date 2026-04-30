@@ -15,9 +15,18 @@ _alert_engine = AlertEngine()
 _hours_since_last_meal = 0.0
 
 
+MAX_STEPS_PER_WEEK = 2016  # 7 days × 288 steps/day
+
+
 def _simulate_one_step() -> dict:
     global _hours_since_last_meal
     state = _engine.get_state()
+
+    if state and state.step >= MAX_STEPS_PER_WEEK:
+        _engine.reset()
+        _hours_since_last_meal = 0.0
+        state = None
+
     sim_time = state.sim_time if state else "00:00"
     glucose = state.glucose if state else 95.0
 

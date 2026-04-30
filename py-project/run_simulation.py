@@ -4,7 +4,7 @@ from simulation.engine import SimulationEngine
 from meal_model.predictor import MealPredictor
 from alert.rules import AlertEngine
 
-MAX_STEPS = 288
+MAX_STEPS = 2016  # 7 days × 24h × 12 steps/h
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
             f"Alert: {alert_str}"
         )
 
-    print(f"\nSimulation complete. {total_meal_count} meals injected over 24 hours.")
+    print(f"\nSimulation complete. {total_meal_count} meals injected over 7 days.")
 
 
 if __name__ == "__main__":
